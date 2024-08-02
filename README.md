@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+## Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## react-redux
 
-## Available Scripts
+1. **Actions**: Define action types and action creators.
+2. **Reducer**: Handle state changes based on actions.
+3. **Store**: Create a Redux store with the reducer.
+4. **Provider**: Wrap your app with Provider to pass the store.
+5. **Components**: Use useSelector to get state and useDispatch to dispatch actions.
 
-In the project directory, you can run:
+**Purpose**:
 
-### `npm start`
+**React-Redux** is a library that provides bindings to connect React components with a Redux store. It allows React components to interact with the Redux store, enabling them to read from and dispatch actions to the store.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Key Features:
+Provider Component: Makes the Redux store available to all nested components via React context.
+useSelector Hook: Selects and returns a part of the state from the Redux store.
+useDispatch Hook: Provides a function to dispatch actions to the Redux store.
+connect Function: Higher-order component (HOC) to connect React components to the Redux store.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## redux-toolkit
 
-### `npm test`
+1. **Slice Creation (counterSlice.js)**
+Defines actions and reducers in one place.
+Provides an initial state and reducers to handle state changes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Store Configuration (store.js)**
+Sets up the Redux store and integrates the reducer.
 
-### `npm run build`
+3. **Provider Setup (index.js)**
+Wraps the app with the Redux Provider to pass the store to React components.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **React Components (App.js)**
+Uses useSelector to access state and useDispatch to dispatch actions.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Purpose:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Redux Toolkit** is an official library that simplifies the process of writing Redux logic.
+It provides utilities to help with the common tasks in Redux, such as creating slices, configuring the store, and handling asynchronous logic.
 
-### `npm run eject`
+Key Features:
+createSlice: Simplifies the creation of reducers and actions by defining them in a single place.
+configureStore: Simplifies store setup with default middleware and DevTools integration.
+createAsyncThunk: Helps with handling asynchronous actions (e.g., data fetching) in a more manageable way.
+createReducer and createAction: Simplifies creating reducers and actions.
+RTK Query: An advanced data fetching and caching tool integrated with Redux Toolkit.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
