@@ -11,7 +11,7 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart:(state, action) => {
-            const {id, thumbnail, title, price} = action.payload;
+            const {id, thumbnail, title, price, stock} = action.payload;
             const existingItem = state.carts.find(item => item.id === id);
 
             if(existingItem) {
@@ -36,10 +36,12 @@ export const cartSlice = createSlice({
         increaseQuantity: (state, action) => {
             const index = action.payload;
             if(state.carts[index]) {
-                state.totalItemInCart +=1;
-                state.carts[index].quantity += 1;
-                state.carts[index].totalPrice += (state.carts[index].price)
-                state.totalPriceInCart += state.carts[index].price;
+                if(state.carts[index].quantity <= state.carts[index].stock) { 
+                    state.totalItemInCart +=1;
+                    state.carts[index].quantity += 1;
+                    state.carts[index].totalPrice += (state.carts[index].price)
+                    state.totalPriceInCart += state.carts[index].price;
+                }
             }
         },
         decreaseQuantity:(state, action) => {

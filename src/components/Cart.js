@@ -35,7 +35,7 @@ const Cart = () => {
                     </thead>
                     <tbody>
                         {
-                            carts.map((item, index) => {
+                            carts.length >= 1 ? carts.map((item, index) => {
                                 return (
                                    <tr key={index}>
                                         <td><i className="badge badge-danger" onClick={()=>dispatch(deleteCart(index))}>X</i></td>
@@ -50,7 +50,7 @@ const Cart = () => {
                                         <td>{Number(item.totalPrice).toLocaleString('en-US')}</td>
                                    </tr>
                                 )
-                            })
+                            }) : <tr><td colSpan={6} style={{fontWeight:"bold"}}>Please add product(s) in the cart.</td></tr>
                         }
                         <tr>
                             <td colSpan="5">Total</td>

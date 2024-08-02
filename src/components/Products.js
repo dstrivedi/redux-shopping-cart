@@ -49,6 +49,7 @@ const Products = () => {
                                 <img src={item.thumbnail} className="img-responsive" style={{width: "100%", height:"auto", marginTop: "20px"}} alt="Product"/>
                                 <h5 style={{height: "80px", display: "flex", alignItems: "center", justifyContent: "center"}}>{item.title}</h5>
                                 <button className="btn btn-light" type="button" onClick={() => dispatch(addToCart(item))} style={{cursor: "pointer", marginBottom: "20px"}}>Add to Cart</button>
+                                <h6>In stock: {item.stock}</h6>
                             </div>
                         ))
                     )}
